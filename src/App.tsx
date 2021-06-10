@@ -1,12 +1,10 @@
-import './App.css'
-import FakeComponents from './core/store/fake/FakeComponent'
-import UsersComponents from './core/store/users/UsersComponent'
+import './App.scss'
+import AppRoute from './core/router'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FakeComponents />
-        <UsersComponents />
+        <AppRoute />
       </header>
     </div>
   )
