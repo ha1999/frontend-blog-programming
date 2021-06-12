@@ -1,0 +1,21 @@
+.body-home {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    color: darkcyan;
+    .news-mark {
+        width: 70%;
+        background-color: darkgoldenrod;
+        h1 {
+            text-align: start;
+        }
+    }
+    .news-new {
+        width: 30%;
+        background-color: darkmagenta;
+        h2 {
+            text-align: start;
+            font-size: 1.2rem;
+        }
+    }
+}
