@@ -1,14 +1,27 @@
-import { Button } from 'react-bootstrap';
-import Layout from '../Layout'
-function Home(){
-    return (
+import { useEffect } from 'react';
+import Layout from '../Layout';
+import Banner from '../../components/common/Banner/Banner';
+import './home.scss'
+
+function Home() {
+  useEffect(() => {
+    document.title = 'Blog programming';
+  }, []);
+  return (
     <Layout>
-        <>
-        <Button>Hello</Button>
-        <h1>Home page</h1>
-        </>
+      <>
+        <Banner />
+       <div className="body-home">
+          <div className="news-mark">
+            <h1>Bài viết nổi bật</h1>
+          </div>
+          <div className="news-new">
+            <h2>Bài viết mới</h2>
+          </div>
+       </div>
+      </>
     </Layout>
-    )
+  );
 }
 
-export default Home
+export default Home;

@@ -1,10 +1,15 @@
-import Layout from '../Layout'
-function Profile(){
-    return (
+import { useEffect } from 'react';
+import Layout from '../Layout';
+
+function Profile() {
+  useEffect(() => {
+    document.title = 'Tin công nghệ';
+  }, []);
+  return (
     <Layout>
-        <h1>Profile page</h1>
+      <h1>Profile page</h1>
     </Layout>
-    )
+  );
 }
 
-export default Profile
+export default Profile;
