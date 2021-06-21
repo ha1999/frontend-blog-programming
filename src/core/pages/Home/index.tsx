@@ -5,6 +5,8 @@ import CropDemo from '../../components/common/cropperImage'
 import ModalBase from '../../components/common/modal'
 import {useDispatch} from 'react-redux'
 import {LOAD_TODO_FAKE} from '../../store/sagaActions'
+import NewArticle from './NewArticle'
+import PerfectArticl from './PerfectArticle'
 import './home.scss'
 
 function Home() {
@@ -18,10 +20,12 @@ function Home() {
       <>
         <Banner />
        <div className="body-home">
-            <ModalBase>
+         <NewArticle />
+         <PerfectArticl />
+            {/* <ModalBase>
               <CropDemo src="https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-4.jpg" />
             </ModalBase>
-            <button onClick={fetchUser}>Load user</button>
+            <button onClick={fetchUser}>Load user</button> */}
        </div>
       </>
     </Layout>
