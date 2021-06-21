@@ -1,7 +1,10 @@
 .top-menu{
     background-color: #282c34;
     display: flex;
+    position: fixed;
     justify-content: space-between;
+    z-index: 100;
+    width: 100%;
     box-shadow: 0 3px 8px var(--newtab-inner-box-shadow-color-nte), 0 0 2px var(--newtab-tile-shadow-secondary);
     .logo-nest{
         padding: 1rem 0;
