@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Modal from 'react-modal'
-import {customStyles} from '../../../utils/config'
 Modal.setAppElement('#root')
 
 type Props = {
