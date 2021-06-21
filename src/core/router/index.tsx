@@ -6,6 +6,7 @@ import {
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import Blog from '../pages/Blog';
+import Introduce from '../pages/Introduce'
 
 function AppRoute() {
   return (
@@ -19,6 +20,9 @@ function AppRoute() {
         </Route>
         <Route path="/tin-cong-nghe.html">
           <Profile />
+        </Route>
+        <Route path="/gioi-thieu.html">
+          <Introduce />
         </Route>
       </Switch>
     </Router>

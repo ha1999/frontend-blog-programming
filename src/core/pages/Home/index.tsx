@@ -18,12 +18,6 @@ function Home() {
       <>
         <Banner />
        <div className="body-home">
-          <div className="news-mark">
-            <h1>Bài viết nổi bật</h1>
-          </div>
-          <div className="news-new">
-            <h2>Bài viết mới</h2>
-          </div>
             <ModalBase>
               <CropDemo src="https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-4.jpg" />
             </ModalBase>
