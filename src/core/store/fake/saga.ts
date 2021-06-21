@@ -9,7 +9,7 @@ export function* subOfCountSaga(action: AddtoCount) {
   yield put(subOfCount(action.payload));
 }
 
-export default function* fakeSaga() {
-  yield takeEvery(sagaActions.ADD_TO_COUNT, addToCountSaga);
-  yield takeEvery(sagaActions.SUB_OF_COUNT, subOfCountSaga);
-}
+export const fakeSaga = [
+  takeEvery(sagaActions.ADD_TO_COUNT, addToCountSaga),
+  takeEvery(sagaActions.SUB_OF_COUNT, subOfCountSaga)
+]

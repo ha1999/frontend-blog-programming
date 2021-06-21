@@ -1,11 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User } from '../api';
 import { RootState } from '../rootReducer';
 
 type InitialState = {
-    name: string
+    name: string,
+    listUsers: User[]
 }
 const initialState: InitialState = {
   name: '',
+  listUsers: []
 };
 
 const UsersSlice = createSlice({
@@ -18,10 +21,13 @@ const UsersSlice = createSlice({
     clearName(state) {
       state.name = '';
     },
+    setListUsers(state, action: PayloadAction<User[]>){
+      state.listUsers = action.payload
+    }
   },
 });
 
-export const { changeName, clearName } = UsersSlice.actions;
+export const { changeName, clearName, setListUsers } = UsersSlice.actions;
 
 export const getName = (state: RootState) => state.users.name;
 
