@@ -9,6 +9,7 @@ const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 const store = configureStore({
   reducer: rootReducer,
   middleware,
+  devTools: process.env.NODE_ENV === 'production' ? false : true
 });
 
 sagaMiddleware.run(rootSaga);
