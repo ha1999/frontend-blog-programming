@@ -1,4 +1,4 @@
-import axios from 'axios'
+import httpApi from "../api/http"
 
 export interface User {
     id: number
@@ -10,6 +10,6 @@ export interface User {
 }
 
 export async function getDataTodo(): Promise<User[]>{
-    const {data} = await axios.get('https://jsonplaceholder.typicode.com/users')
+    const {data} = await httpApi.get('https://jsonplaceholder.typicode.com/users')
     return data
 }

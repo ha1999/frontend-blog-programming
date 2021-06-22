@@ -4,10 +4,60 @@
     margin: auto;
     color: darkcyan;
     .new-article {
-        width: 70%;
+        width: 67%;
+        margin-right: 3%;
         h2 {
             text-align: start;
             font-size: 1.2rem;
+        }
+        ul li {
+            padding: 10px;
+            display: flex;
+            background-color: #ffff;
+            margin-bottom: 20px;
+            img {
+                width: 30%;
+                margin-right: 3%;
+            }
+            .content{
+                .tag{
+                    display: flex;
+                    span{
+                        font-size: .8rem;
+                        color: rgb(255, 166, 0);
+                        padding: 0 5px;
+                    }
+                }
+                .title{
+                    font-size: 1.2rem;
+                    margin: 10px 0 0;
+                }
+                .auth-time {
+                    display: flex;
+                    font-size: .8rem;
+                    color: rgb(255, 217, 0);
+                    padding: 0 5px;
+                    span {
+                        margin-right: 20px;
+                        i.fa {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                .short-content {
+                    font-size: .9rem;
+                }
+                width: 67%;
+                text-align: start;
+                overflow: hidden;
+                & > button {
+                    background-color: rgb(255, 196, 0);
+                    padding: 10px 15px;
+                    border: 1px solid rgb(255, 187, 0);
+                    color: white;
+                    font-weight: 600;
+                }
+            }
         }
     }
     .perfect-article {
