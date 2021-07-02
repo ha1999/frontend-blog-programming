@@ -1,5 +1,5 @@
 import { Editor } from '@tinymce/tinymce-react';
-import axios from 'axios'
+import httpApi from '../../api/http';
 import ToastifyBase from '../../utils/toastify';
 
 type Props = {
@@ -26,7 +26,7 @@ export default function EditorBase({content, setContent}: Props) {
             const formData = new FormData()
             formData.append('file', blodInfo.blob())
             try {
-                const {data} = await axios.post('http://localhost:9000/api/file', formData)
+                const {data} = await httpApi.post('file', formData)
                 success(data)
             } catch (error) {
               ToastifyBase.error('123456765432')
