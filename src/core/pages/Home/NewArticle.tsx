@@ -27,8 +27,7 @@ function NewArticle(){
                                 5
                             </span>
                         </div>
-                        <p className="short-content">Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần,
-                         em nên gán cho một biến nhé.Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần, em nên gán cho một biến nhé.</p>
+                        <p className="short-content">Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần</p>
                         <button>Read more</button>
                     </div>
                 </li>
@@ -57,8 +56,7 @@ function NewArticle(){
                                 5
                             </span>
                         </div>
-                        <p className="short-content">Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần,
-                         em nên gán cho một biến nhé.Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần, em nên gán cho một biến nhé.</p>
+                        <p className="short-content">Hàm này actionService.checkExitsElement(actionId, listAction) được gọi đến nhiều lần</p>
                         <button>Read more</button>
                     </div>
                 </li>
