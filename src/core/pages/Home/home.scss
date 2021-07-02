@@ -1,5 +1,5 @@
 .body-home {
-    width: 90%;
+    width: 80%;
     display: flex;
     margin: auto;
     color: darkcyan;
@@ -23,9 +23,14 @@
                 .tag{
                     display: flex;
                     span{
+                        cursor: pointer;
                         font-size: .8rem;
                         color: rgb(255, 166, 0);
                         padding: 0 5px;
+                        margin-right: 20px;
+                        &:hover {
+                            color: rgb(8, 134, 151);
+                        }
                     }
                 }
                 .title{
@@ -65,6 +70,21 @@
         h2 {
             text-align: start;
             font-size: 1.2rem;
+        }
+        ul li {
+            padding: 10px;
+            display: flex;
+            background-color: rgb(231, 229, 229);
+            margin-bottom: 10px;
+            img {
+                width: 30%;
+            }
+            .content {
+                width: 70%;
+               h3.title{
+                font-size: 1rem;
+               }
+            }
         }
     }
 }
