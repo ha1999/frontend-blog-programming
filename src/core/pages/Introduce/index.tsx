@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import OwnMaps from '../../components/maps';
+import MyMaps from '../../components/maps';
 import Layout from '../Layout';
 
 function Introduce() {
@@ -9,7 +9,7 @@ function Introduce() {
   return (
     <Layout>
       <h1>Introduce page</h1>
-      <OwnMaps />
+      <MyMaps />
     </Layout>
   );
 }
