@@ -6,9 +6,6 @@ export const successLocation = async (location: GeolocationPosition) => {
         const {continent, countryName, principalSubdivision, locality} = data
         console.log(continent, '-', countryName, '-', principalSubdivision, '-', locality)
     }
-    axios.
-    get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
-    .then(hanlderSuccess)
-    .catch(err => console.log(err))
+    axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`).then(hanlderSuccess).catch(err => console.log(err))
 }
 export const failureLocation = (positionError: GeolocationPositionError) => console.error(positionError)

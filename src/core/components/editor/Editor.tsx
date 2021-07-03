@@ -1,17 +1,18 @@
+import React from 'react'
 import { Editor } from '@tinymce/tinymce-react';
 import httpApi from '../../api/http';
 import ToastifyBase from '../../utils/toastify';
-
+import {key_tiny} from '../../config'
 type Props = {
     content: string,
     setContent: (content: string) => void
 }
 
-export default function EditorBase({content, setContent}: Props) {
+const  EditorBase = ({content, setContent}: Props) => {
   return (
     <>
       <Editor
-        apiKey='v9tmyab2lm6yxdjda1cok5bsbvxx3nfdv9175fghb2612yzl'
+        apiKey={key_tiny}
         initialValue="<p>This is the initial content of the editor.</p>"
         value={content}
         init={{
@@ -64,3 +65,5 @@ export default function EditorBase({content, setContent}: Props) {
     </>
   );
 }
+
+export default React.memo(EditorBase)

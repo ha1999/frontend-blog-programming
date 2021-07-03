@@ -1,0 +1,1 @@
+export const key_tiny = process.env.REACT_APP_KEY_TINYMCE
