@@ -3,7 +3,7 @@ export const successLocation = async (location: GeolocationPosition) => {
     const {latitude, longitude} = location.coords
     const hanlderSuccess = (res: AxiosResponse<any>) => {
         const {data} = res
-        const {continent, countryName, principalSubdivision, locality, ...others} = data
+        const {continent, countryName, principalSubdivision, locality} = data
         console.log(continent, '-', countryName, '-', principalSubdivision, '-', locality)
     }
     axios.
