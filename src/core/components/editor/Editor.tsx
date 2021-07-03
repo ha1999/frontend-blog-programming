@@ -38,12 +38,16 @@ export default function EditorBase({content, setContent}: Props) {
             }
           },
           setup: editor => {
+              editor.on('click', e => {
+                console.log(editor.selection.getNode().querySelector('img')?.getAttribute('src'))
+              })
+
               editor.on('keydown', e => {
+
                 if ((e.keyCode === 8 || e.keyCode === 46) && editor.selection) { // delete & backspace keys
 
-                    const selectedNode = editor.selection.getNode(); // get the selected node (element) in the editor
-                    console.log('nodename select is', selectedNode, '------') // A callback that will let me invoke the deletion of the image on the server if appropriate for the image source.
-
+                    const selectedNode = editor.selection.getNode()
+                    console.log(selectedNode.getAttributeNode('src'), '------') // get the selected node (element) in the editor
                     if (selectedNode && selectedNode.nodeName === 'IMG') {
             
                         console.log('nodename select is', selectedNode, '------') // A callback that will let me invoke the deletion of the image on the server if appropriate for the image source.
