@@ -1,18 +1,21 @@
-import { useEffect, useState } from 'react';
-import EditorBase from '../../components/editor/Editor';
-import Layout from '../Layout';
+import { useEffect} from 'react'
+import { Button } from 'react-bootstrap'
+import InputTagAutoComplete from '../../components/inputTag'
+import ActionBlog from '../../components/actionBlog'
+import Layout from '../Layout'
 
 function Blog() {
-  const [content, setContent] = useState('')
   useEffect(() => {
-    document.title = 'Bài viết';
-  }, []);
+    document.title = 'Bài viết'
+  }, [])
   return (
     <Layout>
       <h1>Blog page</h1>
-      <EditorBase content={content} setContent={setContent}/>
+      <Button variant="primary">Tạo Blog</Button>
+      <ActionBlog />
+      <InputTagAutoComplete />
     </Layout>
-  );
+  )
 }
 
-export default Blog;
+export default Blog
