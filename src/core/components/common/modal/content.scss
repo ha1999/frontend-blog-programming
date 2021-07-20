@@ -1,0 +1,26 @@
+.content-modal {
+    h1 {
+        color: hotpink;
+    }
+    .submit-close {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            margin-right: 30px;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        .cancel {
+            background: rgb(255, 217, 0);
+            color: white;
+        }
+        .submit {
+            background-color: rgb(5, 134, 194);
+        }
+    }
+}

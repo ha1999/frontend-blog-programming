@@ -3,6 +3,7 @@ import { changeName, clearName, setListUsers} from './usersSlice';
 import { sagaActions, ChangeName } from './sagaActions';
 import {LOAD_TODO_FAKE} from '../sagaActions'
 import {getDataTodo, User} from '../api'
+
 export function* changeNameSaga(action: ChangeName) {
   yield put(changeName(action.payload));
 }

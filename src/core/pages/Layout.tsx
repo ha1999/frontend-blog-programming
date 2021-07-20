@@ -1,17 +1,23 @@
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
 
 type ChildrenComponent = {
     children: React.ReactNode
+}
+const styles = {
+  width: '80%',
+  margin: 'auto'
 }
 function Layout({ children }: ChildrenComponent) {
   return (
     <>
       <Header />
-      {children}
+      <div style={styles}>
+        {children}
+      </div>
       <Footer />
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
