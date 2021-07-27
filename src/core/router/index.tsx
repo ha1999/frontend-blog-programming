@@ -8,8 +8,7 @@ import Home from '../pages/Home'
 const  Profile = React.lazy(()=> import('../pages/Profile'))
 const Blog = React.lazy(()=> import('../pages/Blog'))
 const Introduce  = React.lazy(()=> import('../pages/Introduce'))
-const Login = React.lazy(()=> import('../pages/Login'))
-
+const NewBlog = React.lazy(()=> import ('../pages/CreateBlog'))
 function AppRoute() {
   return (
     <Router>
@@ -17,8 +16,11 @@ function AppRoute() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/bai-viet.html">
+        <Route path="/:userName/:title">
           <Blog />
+        </Route>
+        <Route path="/new">
+          <NewBlog />
         </Route>
         <Route path="/tin-cong-nghe.html">
           <Profile />
@@ -26,11 +28,8 @@ function AppRoute() {
         <Route path="/gioi-thieu.html">
           <Introduce />
         </Route>
-        <Route path="/login.html">
-          <Login />
-        </Route>
         <Route path="*">
-          <Introduce />
+          
         </Route>
       </Switch>
     </Router>

@@ -1,12 +1,13 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import './App.scss'
 import AppRoute from './core/router'
 import { ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useEffect } from 'react'
 import { failureLocation, successLocation } from './utils/location'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { sagaActions } from './core/store/common/sagaActions'
+import Loading from './core/components/common/loading'
+import { getLoading } from './core/store/common/CommonSlice'
 function App(){
   const dispatch  = useDispatch()
   const success = useCallback((location: GeolocationPosition) => {
@@ -27,10 +28,17 @@ function App(){
     }
   },[success])
 
+  useEffect(()=> {
+    dispatch({type: 'CHECK_LOG_IN'})
+  },[dispatch])
+
+  const loading = useSelector(getLoading)
+
   return (
     <div className="App">
         <AppRoute />
         <ToastContainer />
+       { loading && <Loading />}
     </div>
   )
 }

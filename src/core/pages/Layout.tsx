@@ -1,12 +1,14 @@
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
+import Header from '../components/header'
+import Footer from '../components/common/footer/Footer'
 
 type ChildrenComponent = {
     children: React.ReactNode
 }
 const styles = {
-  width: '80%',
-  margin: 'auto'
+  width: '100%',
+  margin: 'auto',
+  marginTop: '10vh',
+  minHeight: '60vh'
 }
 function Layout({ children }: ChildrenComponent) {
   return (

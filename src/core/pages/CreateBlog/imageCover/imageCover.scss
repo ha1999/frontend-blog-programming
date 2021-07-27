@@ -1,0 +1,39 @@
+.input-cover-img {
+    margin-bottom: 5vh;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    .img {
+        margin-right: 10%;
+        border: none;
+        border-radius: 7px;
+        width: 250px;
+        height: 100px;
+    }
+    label {
+        background-color: rgb(235, 235, 235);
+        font-size: 1rem;
+        border: 2px solid rgb(226, 224, 224);
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: rgba(240, 87, 87, 0.2) 0px 2px 8px 0px;
+        cursor: pointer;
+        margin-right: 2%;
+    }
+    input {
+        display: none;
+    }
+    .remove {
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: red;
+        border: none;
+        &:hover {
+            border: 2px solid rgb(226, 224, 224);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+    }
+}

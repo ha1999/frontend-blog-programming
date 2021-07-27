@@ -7,7 +7,9 @@ const initialState: InitialState = {
     coords: {
         lat: 0,
         lng: 0
-    }
+    },
+    listTags: [],
+    loading: false
 }
 
 const CommonSlice = createSlice({
@@ -16,6 +18,15 @@ const CommonSlice = createSlice({
     reducers: {
         updateCoords(state, action: PayloadAction<Coords>){
             state.coords = action.payload
+        },
+        setListTags(state, action: PayloadAction<string[]>){
+            state.listTags = action.payload
+        },
+        clearTags(state){
+            state.listTags = []
+        },
+        setLoading(state, action: PayloadAction<boolean>){
+            state.loading = action.payload
         }
     }
 
@@ -23,9 +34,11 @@ const CommonSlice = createSlice({
 
 
 
-export const {updateCoords} = CommonSlice.actions
+export const {updateCoords, setListTags, clearTags, setLoading} = CommonSlice.actions
 
 export const getCoords = (state: RootState) => state.common.coords;
-
+export const getTags = (state: RootState) => state.common.listTags;
+export const getSystemTags = (state: RootState) => state.common.listTags
+export const getLoading = (state: RootState) => state.common.loading
 
 export default CommonSlice.reducer
