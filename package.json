@@ -16,6 +16,7 @@
     "axios": "^0.21.1",
     "bootstrap": "4.6.0",
     "google-login-react-uet": "^1.0.2",
+    "html-react-parser": "^1.2.7",
     "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -35,6 +36,9 @@
   "scripts": {
     "dev": "PORT=3005 react-scripts start",
     "build": "GENERATE_SOURCEMAP=false && react-scripts build",
+    "build-dev": "env-cmd -e development npm run-script build",
+    "build-staging": "env-cmd -e staging npm run-script build",
+    "build-prod": "env-cmd -e production npm run-script build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -61,7 +65,8 @@
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.11",
-    "@types/tinymce": "^4.6.3"
+    "@types/tinymce": "^4.6.3",
+    "env-cmd": "^10.1.0"
   },
   "resolutions": {
     "styled-components": "^5"

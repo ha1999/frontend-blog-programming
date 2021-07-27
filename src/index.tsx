@@ -10,7 +10,6 @@ ReactDOM.render(
     <Suspense fallback=''>
       <App />
     </Suspense>
-    
   </Provider>,
   document.getElementById('root'),
 );

@@ -1,0 +1,41 @@
+#header {
+    background-color: #ffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    .logo{
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .input-search{
+        width: 40%;
+        input {
+            width: 80%;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #80808087;
+            &:focus{
+                #header .over-lay {
+                    display: block;
+                }
+            }
+        }
+    }
+    .login-info{
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .over-lay{
+        display: none;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+}

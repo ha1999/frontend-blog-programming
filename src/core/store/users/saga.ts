@@ -13,7 +13,7 @@ export function* clearNameSaga() {
 export function* loadTodoUsers() {
   try {
     const data: User[] = yield call(getDataTodo)
-    yield put(setListUsers(data))
+    yield put(setListUsers(data))    
   } catch (error) {
     console.log(error, 'Fetch data is fail!')
   }

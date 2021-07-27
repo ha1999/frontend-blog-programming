@@ -1,0 +1,16 @@
+.title {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3%;
+    input {
+        width: 100%;
+        border: none;
+        font-size: 3vw;
+        &:focus {
+            outline: none;
+        }
+        &:focus ~ .description {
+            display: block;
+        }
+    }
+}

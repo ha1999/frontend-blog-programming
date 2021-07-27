@@ -1,20 +1,29 @@
 .body-home {
-    width: 80%;
+    width: 90%;
     display: flex;
     margin: auto;
     color: darkcyan;
+    .left-bar{
+        width: 20%;
+    }
     .new-article {
-        width: 67%;
-        margin-right: 3%;
+        width: 50%;
+        margin-left: 10px;
         h2 {
             text-align: start;
             font-size: 1.2rem;
+            padding-top: 10px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
         }
         ul li {
             padding: 10px;
             display: flex;
             background-color: #ffff;
             margin-bottom: 20px;
+            border-radius: 5px;
             img {
                 width: 30%;
                 margin-right: 3%;
@@ -64,26 +73,31 @@
                 }
             }
         }
-    }
-    .perfect-article {
-        width: 30%;
-        h2 {
-            text-align: start;
-            font-size: 1.2rem;
-        }
-        ul li {
-            padding: 10px;
+        .menu{
             display: flex;
-            background-color: rgb(231, 229, 229);
-            margin-bottom: 10px;
-            img {
-                width: 30%;
-            }
-            .content {
-                width: 70%;
-               h3.title{
-                font-size: 1rem;
-               }
+            justify-content: space-between;
+            align-items: center;
+            ul{
+                display: flex;
+                padding: 0;
+                margin: 0;
+                li {
+                    background-color: transparent;
+                    font-size: 1rem;
+                    margin: 0;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    color: black;
+                    border-radius: 0;
+                    &:hover{
+                        background-color: rgb(175, 174, 169);
+                        color: rgb(5, 141, 141);
+                    }
+                }
+                li.active {
+                    border-bottom: 3px solid rgb(5, 149, 185);
+                    color: rgb(6, 110, 110);
+                }
             }
         }
     }
