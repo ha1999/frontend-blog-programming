@@ -1,0 +1,122 @@
+.right-blog{
+    overflow: scroll;
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    width: 27%;
+    // height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: black;
+    text-align: left;
+    font-size: 1rem;
+    .info-author{
+        width: 85%;
+        background-color: #ffff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        .head-color {
+            background-color: brown;
+            height: 50px;
+            width: 100%;
+            display: block;
+        }
+        .avatar-name{
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+        }
+        .slogan{
+            margin-top: 50px;
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+        .follow{
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            margin-left: 5%;
+            padding: 10px 0;
+            text-align: center;
+            background-color: blue;
+            color: #ffff;
+            border: none;
+            border-radius: 7px;
+            font-weight: bold;
+
+        }
+        label {
+            margin-top: 20px;
+            font-size: .8rem;
+            padding: 0 10px;
+            color: grey;
+            font-weight: bold;
+        }
+        p {
+            padding: 0 10px;
+            margin: 8px 0;
+        }
+    }
+    .more-blogs-author {
+        width: 85%;
+        background-color: #ffff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 10px 0;
+        .title{
+            display: flex;
+            align-items: center;
+            margin-left: 7px;
+            padding: 5px 0 15px 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(241, 236, 236);
+            a {
+                text-decoration: none;
+                margin-left: 10px;
+            }
+        }
+        .more-blog {
+            display: flex;
+            flex-direction: column;
+            a.blog {
+                text-decoration: none;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid rgb(243, 239, 239);
+                color: rgb(41, 38, 38);
+                p {
+                    font-size: 1.1rem;
+                    margin: 0;
+                    padding: 10px 0;
+                    font-weight: 500;
+                    border: none;
+                }
+                .tags {
+                    display: flex;
+                    span{
+                        // width: 25%;
+                        margin-right: 7px;
+                        font-size: .8rem;
+                    }
+                }
+            }
+            
+        }
+    }
+}

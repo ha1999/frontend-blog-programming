@@ -1,3 +1,5 @@
+import React from "react"
+
 function NewArticle(){
     return <div className="new-article">
             <div className="menu">
@@ -45,4 +47,4 @@ function NewArticle(){
     </div>
 }
 
-export default NewArticle
+export default React.memo(NewArticle)

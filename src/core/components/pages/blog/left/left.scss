@@ -1,0 +1,26 @@
+.left-blog{
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 10%;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 10vh;
+    li {
+        color: black;
+        margin-bottom: 10vh;
+        display: flex;
+        flex-direction: column;
+        span{
+            font-size: 1rem;
+        }
+        i{
+            font-size: 1.3rem;
+            margin-bottom: 1vh;
+        }
+    }
+}
