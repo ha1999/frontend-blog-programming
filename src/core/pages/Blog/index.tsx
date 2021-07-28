@@ -1,4 +1,7 @@
 import { useEffect} from 'react'
+import ContentBlog from '../../components/pages/blog/content/ContentBlog'
+import LeftBlogPage from '../../components/pages/blog/left/LeftBlogPage'
+import RightBlog from '../../components/pages/blog/right/RightBlog'
 import Layout from '../Layout'
 
 function Blog() {
@@ -7,7 +10,10 @@ function Blog() {
   }, [])
   return (
     <Layout>
-      <h1>Blog page</h1>
+      <LeftBlogPage />
+      <ContentBlog />
+      <RightBlog />
+      
     </Layout>
   )
 }
