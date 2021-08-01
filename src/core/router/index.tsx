@@ -5,9 +5,10 @@ import {
   Route,
 } from 'react-router-dom'
 import Home from '../pages/Home'
-const Blog = React.lazy(()=> import('../pages/Blog'))
-const Introduce  = React.lazy(()=> import('../pages/Introduce'))
-const NewBlog = React.lazy(()=> import ('../pages/CreateBlog'))
+const Blog = React.lazy(() => import('../pages/Blog'))
+const Introduce = React.lazy(() => import('../pages/Introduce'))
+const NewBlog = React.lazy(() => import('../pages/CreateBlog'))
+const PageNotFound = React.lazy(() => import('../pages/notFound'))
 function AppRoute() {
   return (
     <Router>
@@ -15,17 +16,20 @@ function AppRoute() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/:userName/:title">
+        <Route path="/t/:tag">
+          <Introduce />
+        </Route>
+        <Route path="/:auth/:title">
           <Blog />
         </Route>
         <Route path="/new">
           <NewBlog />
         </Route>
-        <Route path="/gioi-thieu.html">
-          <Introduce />
+        <Route path="/not-found">
+          <PageNotFound />
         </Route>
         <Route path="*">
-          
+          <PageNotFound />
         </Route>
       </Switch>
     </Router>

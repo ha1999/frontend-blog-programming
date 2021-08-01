@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../Layout';
-import NewArticle from './NewArticle'
+import NewArticle from '../../components/pages/home/newArticle'
 import './home.scss'
 import LeftBar from '../../components/pages/home/leftBar'
 import RightBar from '../../components/pages/home/rightBar'

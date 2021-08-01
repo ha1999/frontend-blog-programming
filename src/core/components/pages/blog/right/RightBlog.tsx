@@ -1,69 +1,39 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { getUser } from '../../../../store/auth/authSlice'
+import MoreFromAuthor from './MoreFromAuthor'
+import { User } from '../../../../store/blog/blog.interface'
 
 import './right.scss'
 
-const RightBlog = () => {
-    const userLogin = useSelector(getUser)
+interface Props {
+    user: User | null
+}
+
+const RightBlog = ({user}: Props) => {
     return <div className="right-blog">
         <div className="info-author">
             <span className="head-color"></span>
             <div className="avatar-name">
-                <img src={userLogin.avatar} alt="avatar" />
-                <span>{userLogin.name}</span>
+                <img 
+                    src={user?.avatar} 
+                    alt="avatar" />
+                <span>{user?.name}</span>
             </div>
-            <div className="slogan">
-            Computer jock, Programmer, Technology enthusiast and Math ❤️ er.  
-            </div>
+            { user?.slogan && <div className="slogan">{user.slogan}</div>}
             <button className="follow">Follow</button>
-            <div className="work">
+            { user?.work && <div className="work">
                 <label>WORK</label>
-                <p>UI Developer at Thoughworks</p>
-            </div>
-            <div className="location">
+                <p>{user.work}</p>
+            </div>}
+            { user?.location && <div className="location">
                 <label>LOCATION</label>
-                <p>India</p>
-            </div>
+                <p>{user.location}</p>
+            </div>}
             <div className="joined">
                 <label>JOINED</label>
-                <p>May 26, 2020</p>
+                <p>{user?.createdAt.slice(0, 10)}</p>
             </div>
         </div>
-        <div className="more-blogs-author">
-            <span className="title">More from 
-            <a href={`/${userLogin.name.replace(/' '/i, '')}`}>{userLogin.name}</a>
-            </span>
-            <div className="more-blog">
-                <a href='/123' className="blog">
-                    <p className="title">A Complete Guide To Decorators In Typescript</p>
-                    <div className="tags">
-                        <span>#html</span>
-                        <span>#react</span>
-                        <span>#nodejs</span>
-                        <span>#Reactjs</span>
-                    </div>
-                </a>
-                <a href='/123' className="blog">
-                    <p className="title">A Complete Guide To Decorators In Typescript</p>
-                    <div className="tags">
-                        <span>#html</span>
-                        <span>#react</span>
-                        <span>#nodejs</span>
-                        <span>#Reactjs</span>
-                    </div>
-                </a>
-                <a href='/123' className="blog">
-                    <p className="title">A Complete Guide To Decorators In Typescript</p>
-                    <div className="tags">
-                        <span>#html</span>
-                        <span>#react</span>
-                        <span>#nodejs</span>
-                        <span>#Reactjs</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <MoreFromAuthor name={user?.name} />
     </div>
 }
 

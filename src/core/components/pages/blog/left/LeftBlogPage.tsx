@@ -2,15 +2,20 @@ import React from 'react'
 
 import './left.scss'
 
-const LeftBlog = () => {
+type Props = {
+    heart: number | undefined
+    view: number | undefined
+}
+
+const LeftBlog = ({heart, view}: Props) => {
     return <ul className="left-blog">
         <li>
             <i className="far fa-heart" />
-            <span>30</span>
+            <span>{heart && heart}</span>
         </li>
         <li>
             <i className="far fa-eye" />
-            <span>30</span>
+            <span>{view && view}</span>
         </li>
         <li>
             <i className="far fa-bookmark" />
