@@ -2,35 +2,49 @@ import React from 'react'
 import Comment from './Comment'
 import NextBlog from '../next'
 import './content.scss'
+import { DetailBlog } from '../../../../store/blog/blog.interface'
+import parse from 'html-react-parser'
+import { Link } from 'react-router-dom'
 
-const ContentBlog = () => {
+type Props = {
+    blog: DetailBlog | null
+    img: string | undefined
+}
+
+const ContentBlog = ({blog, img}: Props) => {
+
     return <div className="main">
         <div className="content-blog">
             <img
-                src="https://res.cloudinary.com/practicaldev/image/fetch/s--zYulMdjH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0n4g9h7np3igjxvjzadg.png"
+                src={blog?.img}
                 alt="img-cover"
                 className="img-cover" />
             <div className="body-content">
                 <h1 className="title">
-                    To Typescript Or To Not?
+                   {blog?.title}
                 </h1>
                 <div className="tags">
-                    <span>#reactjs</span>
-                    <span>#reactjs</span>
-                    <span>#reactjs</span>
-                    <span>#reactjs</span>
+                  {
+                      blog?.tags.split(' ').map((tag, index) => 
+                      <Link to={`/t/${tag}`}>
+                          <span key={index}>
+                          #{tag}
+                      </span>
+                      </Link>
+                    )
+                  }
                 </div>
                 <div className="info-time">
                     <img
-                        src="https://lebaotinhbmt.com/uploads/news/2020_03/con-meo.jpg"
+                        src={img}
                         alt="avatar"
                         className="avatar" />
-                    <span className="name">Le Ngoc Ha</span>
-                    <span className="time-create-blog">17-04-2021</span>
-                    <span className="time-read">5 min read</span>
+                    <span className="name">{blog?.email.slice(0, blog?.email.indexOf('@'))}</span>
+                    <span className="time-create-blog">{blog?.updatedAt.slice(0, 10)}</span>
+                    <span className="time-read">{Math.ceil((blog?.content.length || 0) / 1000)} min read</span>
                 </div>
                 <div className="body-content-blog">
-
+                    {parse(blog?.content || '')}
                 </div>
             </div>
             <Comment />

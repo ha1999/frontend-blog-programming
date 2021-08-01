@@ -33,7 +33,6 @@ function App(){
   },[dispatch])
 
   const loading = useSelector(getLoading)
-
   return (
     <div className="App">
         <AppRoute />

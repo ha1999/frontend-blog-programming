@@ -1,6 +1,7 @@
 import { put, takeLatest} from 'redux-saga/effects'
 import { handlerError } from '../../../utils/handleError'
 import ToastifyBase from '../../../utils/toastify'
+import { setLoading } from '../common/CommonSlice'
 import {login, logout, checkLogin} from './api'
 import { AuthResult } from './auth.interface'
 import {loginSaga, logoutSaga} from './authSlice'
@@ -19,10 +20,13 @@ export function* userLogin(action: LoginAction){
 
 export function* userLogout(){
     try {
+        yield put(setLoading(true))
         yield logout()
         yield put(logoutSaga())
     } catch (error) {
-        ToastifyBase.error(error.message)
+        handlerError(error)
+    } finally {
+        yield put(setLoading(false))
     }
 }
 
@@ -31,7 +35,7 @@ export function* userCheckLogin(){
         const data: AuthResult = yield checkLogin()
         yield put(loginSaga(data))
     } catch (error) {
-        ToastifyBase.error(error.message)
+        ToastifyBase.warn('You have not login! Please login to system')
     }
 }
 
