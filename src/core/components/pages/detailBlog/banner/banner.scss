@@ -1,0 +1,60 @@
+.banner-tag{
+    width: 100%;
+    border: 1px solid rgb(209, 207, 207);
+    border-radius: 7px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    background-color: #ffff;
+    .color-top{
+        background-color: black;
+        height: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .logo-info{
+        width: 100%;
+        display: flex;
+        .logo-tag {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 64px;
+                height: 64px;
+            }
+        }
+        .info-tag{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .name-follow{
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                .name {
+                    color: black;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+                .follow{
+                    background-color: blue;
+                    border: none;
+                    border-radius: 7px;
+                    padding: 10px 20px;
+                    color: #ffff;
+                    font-weight: 700;
+                }
+            }
+            .description{
+                padding: 20px;
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-info{
+        flex-direction: column;
+    }
+  }

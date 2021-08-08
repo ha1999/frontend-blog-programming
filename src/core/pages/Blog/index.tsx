@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import ContentBlog from '../../components/pages/blog/content/ContentBlog'
 import LeftBlogPage from '../../components/pages/blog/left/LeftBlogPage'
 import RightBlog from '../../components/pages/blog/right/RightBlog'
-import { getBlogCurrent } from '../../store/blog/blog.slice'
+import { getBlogCurrent, removeBlogCurrent } from '../../store/blog/blog.slice'
 import Layout from '../Layout'
 
 interface Params {
@@ -27,11 +27,14 @@ function Blog() {
       type: 'GET_DETAIL_BLOG',
       payload: {auth, title}
     })
+    return () => {
+      dispatch(removeBlogCurrent())
+    }
   }, [auth, dispatch, title])
 
   return (
     <Layout>
-      <LeftBlogPage heart={blog?.heart} view={blog?.view}/>
+      <LeftBlogPage title={title}/>
       <ContentBlog blog={blog} img={user?.avatar} />
       <RightBlog user={user} />
     </Layout>

@@ -4,8 +4,6 @@ export interface ResponseGetBlog {
     email: string
     img: string
     overview: string
-    heart: number
-    view: number
     tags: string
     updatedAt: string
     url: string
@@ -18,7 +16,8 @@ export interface DetailBlog extends ResponseGetBlog {
 
 export interface ResponseGetDetailBlog{
     blog: DetailBlog,
-    user: User
+    user: User,
+    detail: DetailInfoBlog
 }
 
 
@@ -57,7 +56,14 @@ export interface User {
     createdAt: string
 }
 
+export interface DetailInfoBlog{
+    heart: number
+    view: number
+    book_mark: number
+}
+
 export interface CurrentBlog {
     blog:  DetailBlog | null
     user: User | null
+    detail: DetailInfoBlog
 }

@@ -12,6 +12,7 @@ export function* userLogin(action: LoginAction){
         const data: AuthResult = yield login(action.payload)
         yield put(loginSaga(data))
         ToastifyBase.success('Login successful!')
+        window.location.reload()
     } catch (error) {
         handlerError(error)
         yield put(logoutSaga())
