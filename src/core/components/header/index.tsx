@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.scss'
 import ButtonLogin from '../common/buttonLogin'
 import { Link } from 'react-router-dom'
+import InputSearch from './InputSearch'
 const Header = () => {
     return <div id="header">
         <div className="logo">
@@ -12,12 +13,7 @@ const Header = () => {
                 />
             </Link>
         </div>
-        <div className="input-search">
-            <input 
-                placeholder="Search ..."
-                type="text" 
-                name="input-search" />
-        </div>
+        <InputSearch />
         <div className="login-info">
             <ButtonLogin />
         </div>

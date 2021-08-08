@@ -1,21 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { ResponseGetBlog } from '../../../../store/blog/blog.interface'
+import { Link, useHistory } from 'react-router-dom'
+import { ResponseGetBlog } from '../../store/blog/blog.interface'
+
+import './item.scss'
 
 type Props = {
     blog: ResponseGetBlog
 }
 const BlogItem = ({ blog }: Props) => {
-    return <Link to={blog.url}><li>
+    const history = useHistory()
+    const pushRoute = React.useCallback((e: React.MouseEvent<HTMLSpanElement, MouseEvent>, link: string) => {
+        e.stopPropagation()
+        e.preventDefault()
+        history.push(`/t/${link}`)
+    }, [history])
+    const htmlTags = React.useMemo(() =>
+        blog.tags.split(' ')
+            .map((tag, index) => <span onClick={(e) => pushRoute(e,tag)} key={index} >#{tag}</span>),
+        [blog, pushRoute])
+    return <Link to={`/${blog.url}`}><li>
         <img
             src={blog.img}
             alt="Nestjs" />
         <div className="content">
             <div className="tag">
-                {
-                    blog.tags.split(' ')
-                        .map((tag, index) => <span key={index} ><Link to={`t/${tag}`}>#{tag}</Link></span>)
-                }
+                {htmlTags}
             </div>
             <h3 className="title">{blog.title}</h3>
             <div className="auth-time">
@@ -29,7 +38,7 @@ const BlogItem = ({ blog }: Props) => {
                 </span>
                 <span>
                     <i className="fa fa-comments" aria-hidden="true" />
-                    {blog.view}
+                    {0}
                 </span>
             </div>
             <p className="short-content">{blog.overview}</p>

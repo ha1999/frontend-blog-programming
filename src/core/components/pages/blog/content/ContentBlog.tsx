@@ -26,8 +26,8 @@ const ContentBlog = ({blog, img}: Props) => {
                 <div className="tags">
                   {
                       blog?.tags.split(' ').map((tag, index) => 
-                      <Link to={`/t/${tag}`}>
-                          <span key={index}>
+                      <Link to={`/t/${tag}`} key={index}>
+                          <span>
                           #{tag}
                       </span>
                       </Link>

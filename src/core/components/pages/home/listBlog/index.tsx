@@ -1,14 +1,17 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getFilterBlog, getTakePage } from "../../../../store/blog/blog.slice"
-import ListBlog from './ListBlogs'
-import './newArticle.scss'
+import { getFilterBlog, getListBlogs, getTakePage } from "../../../../store/blog/blog.slice"
+import BlogItem from "../../../blogItem/BlogItem"
+import TopMenu from "../../../menuTop"
 
-function NewArticle() {
+import './listBlogs.scss'
+
+function ListBlogs() {
     const dispatch = useDispatch()
     const take = useSelector(getTakePage)
     const filter = useSelector(getFilterBlog)
     const [page, setPage] = React.useState<number>(1)
+    const listBlogs = useSelector(getListBlogs)
     console.log(setPage)
     React.useEffect(() => {
         dispatch({
@@ -20,20 +23,16 @@ function NewArticle() {
             }
         })
     }, [dispatch, take, filter, page])
+    const htmlBlogs = React.useMemo(() =>
+    listBlogs.map((blog, index) => <BlogItem key={index} blog={blog} />)
+    , [listBlogs])
+
     return <div className="new-article">
-        <div className="menu">
-            <h2>Blogs</h2>
-            <ul>
-                <li className="active">Feed</li>
-                <li>Week</li>
-                <li>Month</li>
-                <li>Year</li>
-                <li>Infinity</li>
-                <li>Lastest</li>
-            </ul>
-        </div>
-        <ListBlog />
+        <TopMenu />
+        <ul>
+            {htmlBlogs}
+        </ul>
     </div>
 }
 
-export default React.memo(NewArticle)
+export default React.memo(ListBlogs)

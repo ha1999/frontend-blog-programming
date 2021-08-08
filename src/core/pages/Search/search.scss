@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: rgb(7, 143, 148);
+}
+.page-search{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    min-width: 300px;
+    .left-bar{
+        width: 40%;
+    }
+    .list-blog{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .menu {
+            width: 100%;
+        }
+        .rc-pagination{
+            li {
+                padding: 0;
+            }
+        }
+    }
+}
