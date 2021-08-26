@@ -1,9 +1,117 @@
-.new-article {
-    width: 50%;
-    margin-left: 10px;
+.content-home {
+    width: 100%;
     h2 {
         text-align: start;
         font-size: 1.2rem;
         padding-top: 10px;
+    }
+    .list-data-blog {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        a {
+            width: 32%;
+        }
+    }
+    .intro-home{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: black;
+        .img{
+            width: 40%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+            margin-right: 5%;
+            box-sizing: border-box;
+        }
+        .info-detail{
+            width: 55%;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding-right: 10px;
+            h2{
+                font-size: 2rem;
+                margin: 0;
+                color: white;
+            }
+            .content{
+                font-size: 1.2rem;
+                color: grey;
+            }
+            .read-more{
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                color: black;
+                font-size: 1.2rem;
+                background-color: rgb(255, 166, 0);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .content-home {
+        .intro-home {
+            .info-detail {
+                h2 {
+                    font-size: 1.5rem;
+                }
+                .content{
+                    font-size: 1rem;
+                }
+                .read-more {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .content-home {
+        .list-data-blog{
+            a {
+                width: 48%;
+                img{
+                    height: 250px;
+                }
+            }
+        }
+        .intro-home {
+            margin: 0;
+            flex-direction: column;
+            .img{
+                width: 100%;
+                margin: 0;
+                border-bottom-left-radius: 0;
+            }
+            .info-detail {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .content-home {
+        .list-data-blog{
+            a {
+                width: 90%;
+                margin: auto;
+                margin-bottom: 20px;
+                img{
+                    height: auto;
+                }
+            }
+        }
     }
 }

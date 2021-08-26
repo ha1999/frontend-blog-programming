@@ -2,11 +2,12 @@ import React from 'react';
 import Layout from '../Layout';
 import ListBlogs from '../../components/pages/home/listBlog'
 import './home.scss'
-import LeftBar from '../../components/pages/home/leftBar'
-import RightBar from '../../components/pages/home/rightBar'
 import { useDispatch } from 'react-redux';
 function Home() {
   const dispatch = useDispatch()
+  React.useEffect(()=> {
+    document.title = 'Blog programming'
+  },[])
   React.useEffect(()=> {
     return ()=> {
       dispatch({
@@ -17,9 +18,7 @@ function Home() {
   return (
     <Layout>
        <div className="body-home">
-         <LeftBar />
          <ListBlogs />
-         <RightBar />
        </div>
     </Layout>
   );

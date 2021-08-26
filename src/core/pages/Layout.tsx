@@ -7,7 +7,7 @@ type ChildrenComponent = {
 const styles = {
   width: '100%',
   margin: 'auto',
-  marginTop: '10vh',
+  marginTop: '80px',
   minHeight: '60vh'
 }
 function Layout({ children }: ChildrenComponent) {

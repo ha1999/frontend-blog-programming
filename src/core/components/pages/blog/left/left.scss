@@ -15,6 +15,12 @@
         margin-bottom: 10vh;
         display: flex;
         flex-direction: column;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            background-color: transparent;
+        }
         span{
             font-size: 1rem;
             text-align: center;
@@ -23,6 +29,38 @@
             font-size: 1.3rem;
             margin-bottom: 1vh;
             cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .left-blog{
+        width: 8%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .left-blog{
+        top:0;
+        bottom: 0;
+        flex-direction: row;
+        width: 100%;
+        z-index: 2;
+        box-sizing: border-box;
+        background-color: white;
+        justify-content: center;
+        height: 50px;
+        margin-top: 0;
+        li {
+            display: flex;
+            width: 25%;
+            background-color: #ffff;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            &:hover {
+                background-color: rgb(238, 239, 240);
+            }
         }
     }
 }

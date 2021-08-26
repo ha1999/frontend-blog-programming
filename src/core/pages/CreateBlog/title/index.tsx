@@ -14,6 +14,7 @@ const Tittle = ({title, setTitle}: Props) => {
         value={title}
         placeholder="New blog title here..."
         type="text" 
+        autoComplete="off"
         name="title"/>
     <Description    
         title="Writing a Great Post Title" 
