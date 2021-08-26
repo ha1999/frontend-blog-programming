@@ -15,6 +15,7 @@ const OverView  = ({overView, setOverView}: Props) => {
             onChange={setOverView}
             placeholder="Add short content of blog..."
             type="text" 
+            autoComplete="off"
             name="overview"/>
             <Description    
             title="Writing a Great Post Title" 

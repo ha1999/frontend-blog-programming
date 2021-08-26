@@ -1,5 +1,4 @@
 .right-blog{
-    overflow: scroll;
     position: fixed;
     top: 10vh;
     right: 0;
@@ -119,5 +118,38 @@
             }
             
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .right-blog{
+        z-index: 1;
+        top: 20px;
+        display: block;
+        position: relative;
+        width: 86%;
+        margin-left: 12%;
+        margin-right: 2%;
+        .info-author{
+            width: 100%;
+            margin: auto;
+            margin-bottom: 10px;
+
+            .avatar-name{
+                font-size: .8rem;
+            }
+        }
+        .more-blogs-author{
+            width: 100%;
+        }
+    }
+    
+  }
+
+  @media screen and (max-width: 800px) {
+    .right-blog{
+        box-sizing: border-box;
+        width: 96%;
+        margin: auto;
     }
 }

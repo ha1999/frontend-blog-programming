@@ -61,6 +61,8 @@
                 .time-read{
                     color: grey;
                 }
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgb(241, 239, 239);
             }
             .body-content-blog{
                 width: 100%;
@@ -71,5 +73,20 @@
             border-bottom: 1px solid rgb(209, 207, 207);
             margin-bottom: 30px;
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main{
+        box-sizing: border-box;
+        margin-right: 2%;
+        width: 86%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .main{
+        box-sizing: border-box;
+        width: 96%;
+        margin: auto;
     }
 }

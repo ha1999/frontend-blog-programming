@@ -30,7 +30,6 @@ const TopMenu = () => {
     </ul>, [])
 
     return <div className="menu">
-        <h2>Blogs</h2>
         {size.width > 600 ? list : select}
     </div>
 }

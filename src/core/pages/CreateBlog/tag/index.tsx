@@ -56,6 +56,7 @@ const SelectTags = ({ tags, setTags }: Props) => {
                 onBlur={emitHideSelect}
                 placeholder="Select tags ..."
                 type="text"
+                autoComplete="off"
                 name="input-search"
                 className="input-search" />}
             {htmlSelectTags}

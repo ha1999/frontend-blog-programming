@@ -18,7 +18,7 @@ const BlogItem = ({ blog }: Props) => {
         blog.tags.split(' ')
             .map((tag, index) => <span onClick={(e) => pushRoute(e,tag)} key={index} >#{tag}</span>),
         [blog, pushRoute])
-    return <Link to={`/${blog.url}`}><li>
+    return <Link to={`/${blog.url}`} className="item-blog"><li>
         <img
             src={blog.img}
             alt="Nestjs" />
