@@ -14,6 +14,8 @@ export const CLEAR_LIST_BLOG = 'CLEAR_LIST_BLOG'
 
 export const USER_SEARCH_BLOG = 'USER_SEARCH_BLOG'
 
+export const GET_BLOG_OF_USER = 'GET_BLOG_OF_USER'
+
 export interface ActionGetBlog{
     type: 'BLOG_GET_PAGE',
     payload: FiterDataBlog
@@ -55,4 +57,12 @@ export interface DataTagOfBog {
 export interface ActionDataSearch{
     type: 'USER_SEARCH_BLOG',
     payload: DataSearch
+}
+
+export interface ActionDataGetBlogUser{
+    type: 'GET_BLOG_OF_USER',
+    payload: {
+        email: string
+        page: number
+    }
 }

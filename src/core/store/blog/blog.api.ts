@@ -13,6 +13,12 @@ export const getPageBlog = async (page: number, {email, take, tags}: DataGetBlog
     return data
 }
 
+export const getPageBlogOfUserByEmail = async (dataGet: {page: number, email: string}):Promise<GetBlogData> => {
+    const url = `blogs/member/blog?email=${dataGet.email}&page=${dataGet.page}`
+    const {data} = await httpApi.get(url)
+    return data
+}
+
 export const getDetailBlog = async ({title, auth}: DataGetDetailBlog): Promise<ResponseGetDetailBlog>  => {
     const {data} = await httpApi.get(`blogs/blog-detail/${auth}/${title}`)
     return data

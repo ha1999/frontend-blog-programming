@@ -38,13 +38,15 @@
             border-radius: 10px;
             overflow: hidden;
             background-color: #ffff;
+            width: 200px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             li {
-                padding: 15px;
+                padding: 10px 15px;
                 font-size: 1rem;
                 color: black;
                 max-width: 200px;
                 cursor: pointer;
+                box-sizing: border-box;
                 &:hover{
                     background-color: rgba(179, 183, 187, 0.4);
                 }
@@ -55,6 +57,11 @@
             }
             .icon-text {
                 display: flex;
+                flex-direction: row;
+                width: 100%;
+                i {
+                    width: 10%;
+                }
             }
             .info {
                 border-bottom: 1px solid rgb(218, 215, 215);
