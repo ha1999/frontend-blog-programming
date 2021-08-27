@@ -2,11 +2,15 @@ import React from 'react'
 import './styles.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from '../../../store/auth/authSlice'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 const UserInfoHead = () => {
+    const history = useHistory()
     const user = useSelector(getUser)
     const dispatch  = useDispatch()
     const logout = React.useCallback(()=> dispatch({type: 'LOG_OUT'}) , [dispatch])
+    const pushRoute = React.useCallback((route: string)=>{
+        history.push(route)
+    },[history])
     return <div className="info-head">
         <span className="create-blog">
             <Link to='/new'>Create blog</Link>
@@ -19,7 +23,9 @@ const UserInfoHead = () => {
                     <p>{user.name}</p>
                     <p>{user.email}</p>
                 </li>
-                <li className="icon-text">
+                <li 
+                onClick={()=> pushRoute('/dash-board')}
+                className="icon-text">
                     <i className="fas fa-chart-pie"></i>
                     Dashboard</li>
                 <li className="icon-text">

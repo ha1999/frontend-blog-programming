@@ -1,0 +1,38 @@
+.option{
+    width: 80%;
+    list-style-type: none;
+    background-color: #80808014;
+    border-radius: 5px;
+    li {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        background-color: transparent;
+        border-bottom: 1px solid #80808014;
+        font-weight: bold;
+        .count {
+            background-color: grey;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 300;
+            color: #ffff;
+        }
+        &:hover{
+            background-color: grey;
+            color: #ffff;
+            .count{
+                background-color: aqua;
+            }
+        }
+    }
+    li.active{
+        background-color:#ffff;
+        color: rgb(7, 166, 214);
+        border-color: aqua;
+    }
+}

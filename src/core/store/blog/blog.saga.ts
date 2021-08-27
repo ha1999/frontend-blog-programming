@@ -15,9 +15,11 @@ import {
     GET_BLOG_OF_TAG,
     CLEAR_LIST_BLOG,
     ActionDataSearch,
-    USER_SEARCH_BLOG
+    USER_SEARCH_BLOG,
+    GET_BLOG_OF_USER,
+    ActionDataGetBlogUser
 } from './blog.action'
-import { getPageBlog, getDetailBlog, heartToBlog, userSaveToBog, getBlogOfTag, userSearchBlog } from './blog.api'
+import { getPageBlog, getDetailBlog, heartToBlog, userSaveToBog, getBlogOfTag, userSearchBlog, getPageBlogOfUserByEmail } from './blog.api'
 import { ResponseGetDetailBlog, GetBlogData} from './blog.interface'
 import { actionHeartBlog, actionSaveBlog, setDetailBlog, setListBlog, clearListBlog } from './blog.slice'
 
@@ -91,6 +93,15 @@ function* getUserSearchBlogSaga(action: ActionDataSearch){
     }
 }
 
+function* getBlogOfUser(action: ActionDataGetBlogUser){
+    try {
+        const data: GetBlogData = yield call(getPageBlogOfUserByEmail, action.payload)
+        yield put(setListBlog(data))
+    } catch (error) {
+        handlerError(error)
+    }
+}
+
 function* clearListBlogSaga(){
     yield put(clearListBlog())
 }
@@ -102,5 +113,6 @@ export const blogSaga = [
     takeLatest(USER_SAVE_BLOG,userSaveBlogSaga),
     takeLatest(GET_BLOG_OF_TAG, listBlogOfTagSaga),
     takeLatest(CLEAR_LIST_BLOG, clearListBlogSaga),
-    takeLatest(USER_SEARCH_BLOG, getUserSearchBlogSaga)
+    takeLatest(USER_SEARCH_BLOG, getUserSearchBlogSaga),
+    takeLatest(GET_BLOG_OF_USER, getBlogOfUser)
 ]

@@ -8,6 +8,7 @@ import Home from '../pages/Home'
 import TagDetail from '../pages/TagDetail'
 const Blog = React.lazy(() => import('../pages/Blog'))
 const NewBlog = React.lazy(() => import('../pages/CreateBlog'))
+const DashBoard = React.lazy(() => import ('../pages/DashBoard'))
 const PageNotFound = React.lazy(() => import('../pages/notFound'))
 const PageSearch = React.lazy(()=> import('../pages/Search'))
 function AppRoute() {
@@ -16,6 +17,9 @@ function AppRoute() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/dash-board">
+          <DashBoard />
         </Route>
         <Route path="/t/:tag">
           <TagDetail />
