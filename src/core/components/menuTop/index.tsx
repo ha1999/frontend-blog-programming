@@ -1,7 +1,7 @@
 import React from 'react'
 import { Size, useWindowSize } from '../../../useHook/sizeWindow';
 import './menu.scss'
-const itemMenu = ['Feed', 'Week', 'Month', 'Year', 'Infinity', 'Lastest']
+const itemMenu = ['Lastest', 'Week', 'Month', 'Year', 'Infinity']
 const TopMenu = () => {
     const size: Size = useWindowSize();
 

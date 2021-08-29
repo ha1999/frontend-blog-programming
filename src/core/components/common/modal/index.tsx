@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Modal from 'react-modal'
 import ContentModal from './Content'
 import { customStyles } from '../../../../utils/config'
@@ -6,27 +5,23 @@ Modal.setAppElement('#root')
 
 type Props  = {
   children?: React.ReactNode
+  isOpen: boolean
+  closeModal: () => void
+  title: string
 }
-  function ModalBase({children}: Props){
-    const [modalIsOpen,setIsOpen] = useState<boolean>(false)
-    const openModal = () => {
-        setIsOpen(true)
-      }
-      const closeModal = () => {
-        setIsOpen(false)
-      }
+  function ModalBase({children, isOpen, closeModal, title}: Props){
       return (
         <div>
-        <button onClick={openModal}>Open Modal</button>
         <Modal
-          isOpen={modalIsOpen}
+          isOpen={isOpen}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
           shouldCloseOnOverlayClick={false}
           preventScroll={true}
+          overlayClassName="Overlay"
         >
-         <ContentModal title="Upload avatar" closeModal={setIsOpen}>
+         <ContentModal title={title} closeModal={closeModal}>
           {children}
          </ContentModal>
         </Modal>

@@ -17,7 +17,6 @@
         }
         .content {
             width: 70%;
-            
             h1{
                 font-size: 1.5rem;
                 padding: 0;
@@ -27,8 +26,10 @@
                 width: 100%;
                 border: 1px solid rgb(214, 213, 213);
                 min-height: 500px;
+                // max-height: 1000px;
                 background-color: #ffff;
                 border-radius: 10px;
+                overflow: scroll;
             }
         }
     }

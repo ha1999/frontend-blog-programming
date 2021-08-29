@@ -20,24 +20,29 @@ const UserInfoHead = () => {
             <img src={user.avatar} alt="avatar" />
             <ul>
                 <li className="info">
-                    <p>{user.name}</p>
                     <p>{user.email}</p>
                 </li>
+                <li 
+                onClick={()=> pushRoute('/profile')}
+                className="icon-text">
+                    <i className="far fa-id-card"></i>
+                    <span>Profile</span></li>
                 <li 
                 onClick={()=> pushRoute('/dash-board')}
                 className="icon-text">
                     <i className="fas fa-chart-pie"></i>
-                    Dashboard</li>
+                    <span>Dashboard</span></li>
+                    
                 <li className="icon-text">
                     <i className="fas fa-cogs"></i>
-                    Setting</li>
+                    <span>Setting</span></li>
 
                 <li 
                 onClick={logout}
                 className="icon-text">
 
                     <i className="fas fa-sign-out-alt"></i>
-                    Sing out
+                    <span>Sing out</span>
                 </li>
             </ul>
         </div>

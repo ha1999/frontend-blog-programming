@@ -12,21 +12,22 @@ export const customStyles: CustomStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(76, 79, 76, 0.91)',
-    height: 'auto'
+    height: '100vh',
+    zIndex: 999999,
+    overflow: 'auto',
   },
   content: {
-    position: 'absolute',
-    top: '20%',
-    left: '20%',
-    right: '20%',
+    // position: 'absolute',
+    // left: '20%',
+    // right: '20%',
     border: '1px solid #ccc',
     background: '#fff',
-    overflow: 'auto',
+    // overflow: 'auto',
     WebkitOverflowScrolling: 'touch',
     borderRadius: '4px',
     outline: 'none',
     padding: '20px',
-    height: 'auto'
+    // height: 'auto'
   }
 }
 

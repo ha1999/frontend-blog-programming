@@ -1,10 +1,10 @@
-import { put, takeLatest} from 'redux-saga/effects'
+import { call, put, takeLatest} from 'redux-saga/effects'
 import { handlerError } from '../../../utils/handleError'
 import ToastifyBase from '../../../utils/toastify'
 import { setLoading } from '../common/CommonSlice'
-import {login, logout, checkLogin} from './api'
-import { AuthResult } from './auth.interface'
-import {loginSaga, logoutSaga} from './authSlice'
+import {login, logout, checkLogin, getProfile} from './api'
+import { AuthResult, Profile } from './auth.interface'
+import {loginSaga, logoutSaga, updateProfile} from './authSlice'
 import {LoginAction, sagaActions} from './sagaActions'
 
 export function* userLogin(action: LoginAction){
@@ -40,9 +40,19 @@ export function* userCheckLogin(){
     }
 }
 
+export function* getProfileSaga() {
+    try {
+        const profile: Profile = yield call(getProfile)
+        yield put(updateProfile(profile))
+    } catch (error) {
+        handlerError(error)
+    }
+}
+
 export const authSaga = [
     takeLatest(sagaActions.LOG_IN, userLogin),
     takeLatest(sagaActions.LOG_OUT, userLogout),
-    takeLatest(sagaActions.CHECK_LOG_IN, userCheckLogin)
+    takeLatest(sagaActions.CHECK_LOG_IN, userCheckLogin),
+    takeLatest(sagaActions.PRO_FILE, getProfileSaga)
 ]
 

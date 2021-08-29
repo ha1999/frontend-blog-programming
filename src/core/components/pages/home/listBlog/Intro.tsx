@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Intro = () => {
-    return <div className="intro-home">
+    return <div className="intro-home" data-aos-delay="800" data-aos="fade-up-right">
         <img 
             src="https://firebasestorage.googleapis.com/v0/b/blog-programming-d228e.appspot.com/o/bk.jpg?alt=media" 
             alt="intro-home-page" 

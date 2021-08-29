@@ -1,0 +1,175 @@
+.profile{
+    width: 80%;
+    max-width: 800px;
+    min-width: 300px;
+    margin: auto;
+    min-height: 500px;
+    background-color: #ffff;
+    border: 1px solid rgb(243, 241, 241);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    .modal-edit-profile {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    .edit {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: green;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: #ffff;
+        cursor: pointer;
+        &:hover {
+            background-color: aqua;
+            color: rgb(255, 166, 0);
+        }
+    }
+    .avatar {
+        top: -50px;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        background-color: grey;
+
+    }
+    .name {
+        margin-top: 120px;
+        color: #548606;
+    }
+    .email {
+        font-size: 1.2rem;
+        color: #548606;
+    }
+    .work-skill-address {
+        margin: 50px 0px 20px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        div {
+            width: 31%;
+            height: 200px;
+            background-color: rgb(7, 226, 208);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            flex-direction: column;
+            color: #ffff;
+            i {
+                font-size: 3rem;
+                color: #ffff;
+            }
+        }
+    }
+    .basic-info{
+        width: 90%;
+        box-sizing: border-box;
+        margin: auto;
+        label {
+            width: 100%;
+            margin: auto;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            display: inline-block;
+            color: #548606;
+            font-weight: 700;
+            input {
+                margin-top: 5px;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px 15px;
+                border: 1px solid rgb(7, 226, 208);
+                border-radius: 5px;
+            }
+        }
+    }
+
+}
+
+.edit-info-user {
+    width: 100%;
+    .user, .basic {
+        width: 100%;
+        border: 1px solid rgb(219, 217, 217);
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        h1 {
+            border-bottom: none;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgb(6, 143, 6);
+        }
+        label {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+            color: #548606;
+            font-weight: 600;
+            input {
+                width: 95%;
+                margin: auto;
+                display: block;
+                padding: 10px 15px;
+                box-sizing: border-box;
+                margin-top: 10px;
+                border: 1px solid rgb(7, 226, 208);
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .profile {
+        width: 95%;
+        margin: auto;
+        .edit {
+            width: 40px;
+            height: 40px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+        }
+        .name {
+            font-size: 1.2rem;
+            margin-top: 60px;
+        }
+        .email {
+            font-size: .8rem;
+        }
+        .work-skill-address {
+            margin-top: 20px;
+            flex-wrap: wrap;
+            div {
+                width: 95%;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+        }
+        .basic-info {
+            margin-top: 20px;
+        }
+    }
+  }

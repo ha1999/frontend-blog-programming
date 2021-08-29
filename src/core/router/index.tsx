@@ -11,12 +11,16 @@ const NewBlog = React.lazy(() => import('../pages/CreateBlog'))
 const DashBoard = React.lazy(() => import ('../pages/DashBoard'))
 const PageNotFound = React.lazy(() => import('../pages/notFound'))
 const PageSearch = React.lazy(()=> import('../pages/Search'))
+const Profile = React.lazy(()=> import ('../pages/Profile'))
 function AppRoute() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/dash-board">
           <DashBoard />
