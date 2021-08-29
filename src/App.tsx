@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sagaActions } from './core/store/common/sagaActions'
 import Loading from './core/components/common/loading'
 import { getLoading } from './core/store/common/CommonSlice'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 function App(){
   const dispatch  = useDispatch()
   const success = useCallback((location: GeolocationPosition) => {
@@ -22,6 +24,10 @@ function App(){
     })
   }, [dispatch])
   
+  useEffect(()=> {
+    AOS.init()
+  },[])
+
   useEffect(()=>{
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(success, failureLocation)

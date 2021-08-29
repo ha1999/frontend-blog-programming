@@ -49,6 +49,7 @@
                 box-sizing: border-box;
                 &:hover{
                     background-color: rgba(179, 183, 187, 0.4);
+                    color: rgb(8, 190, 223);
                 }
                 i {
                     margin-right: 15px;
@@ -60,7 +61,11 @@
                 flex-direction: row;
                 width: 100%;
                 i {
-                    width: 10%;
+                    width: 20%;
+                    color: chocolate;
+                }
+                span{
+                    width: 80%;
                 }
             }
             .info {
@@ -74,3 +79,11 @@
         font-size: 1.8rem;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .info-head{
+        .create-blog{
+            display: none;
+        }
+    }
+  }

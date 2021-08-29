@@ -1,19 +1,25 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { RootState } from '../rootReducer'
-import { AuthResult } from './auth.interface'
+import { AuthResult, Profile } from './auth.interface'
 
 type InitialState = {
     login: boolean
     name: string
     email: string
     avatar: string
+    profile: Profile
 }
 
 const initialState: InitialState = {
     login: false,
     name: '',
     email: '',
-    avatar: ''
+    avatar: '',
+    profile: {
+        work: '',
+        slogan: '',
+        location: ''
+    }
 }
 
 
@@ -26,14 +32,19 @@ const AuthSlice = createSlice({
         },
         logoutSaga(state){
             state = Object.assign(state, {login: false,name: '',email: ''})
+        },
+        updateProfile(state, action: PayloadAction<Profile>){
+            state.profile = action.payload
         }
     }
 })
 
-export const {loginSaga, logoutSaga} = AuthSlice.actions
+export const {loginSaga, logoutSaga, updateProfile} = AuthSlice.actions
 
 export const getLogin = (state: RootState) => state.auth.login
 
 export const getUser = (state: RootState) => state.auth
+
+export const profile = (state: RootState) => state.auth.profile
 
 export default AuthSlice.reducer

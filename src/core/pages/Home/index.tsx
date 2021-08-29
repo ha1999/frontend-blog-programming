@@ -1,8 +1,8 @@
-import React from 'react';
-import Layout from '../Layout';
+import React from 'react'
+import Layout from '../Layout'
 import ListBlogs from '../../components/pages/home/listBlog'
 import './home.scss'
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 function Home() {
   const dispatch = useDispatch()
   React.useEffect(()=> {
@@ -21,7 +21,7 @@ function Home() {
          <ListBlogs />
        </div>
     </Layout>
-  );
+  )
 }
 
-export default React.memo(Home);
+export default React.memo(Home)

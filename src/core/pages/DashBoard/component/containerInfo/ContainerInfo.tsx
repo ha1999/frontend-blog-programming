@@ -9,7 +9,10 @@ type Props = {
 }
 
 const ContainerInfo = ({value, description, bg, color}: Props) => {
-    return <div className="container-info" 
+    return <div 
+                data-aos-duration="1000"
+                data-aos="zoom-in-down"
+                className="container-info" 
                 style={{backgroundColor: bg ?? "#3cc6ef", color: color ?? "#ffff"}}>
             <h1>{value}</h1>
             <p>{description}</p>

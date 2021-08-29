@@ -5,9 +5,18 @@ import './blog.scss'
 
 const BlogOfUser = () => {
     return <div className="blog-of-user">
-        <BlogItemUser />
-        <BlogItemUser />
-        <BlogItemUser />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
+        <BlogItemUser  />
     </div>
 }
 

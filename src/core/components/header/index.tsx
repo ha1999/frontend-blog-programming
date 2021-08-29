@@ -8,7 +8,7 @@ const Header = () => {
         <div className="logo">
             <Link to='/'>
                 <img 
-                    src="https://firebasestorage.googleapis.com/v0/b/blog-programming-d228e.appspot.com/o/logo.jpeg?alt=media&token=59c04b2c-0755-4d3c-a83a-1ca6f6089bc4" 
+                    src="https://firebasestorage.googleapis.com/v0/b/blog-programming-d228e.appspot.com/o/logo.png?alt=media" 
                     alt="logo" 
                 />
             </Link>
