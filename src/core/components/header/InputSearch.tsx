@@ -6,7 +6,7 @@ const InputSearch = () => {
     const [search, setSearch] = React.useState<string>('')
     const enterSearch = React.useCallback((e: React.KeyboardEvent<HTMLInputElement>)=>{
         if(search && e.key === 'Enter'){
-            history.push(`/search?search=${search}&page=1&sort=asc`)
+            history.push(`/search?search=${search.trim()}&page=1&sort=asc`)
         }
     },[search, history])
     return <div className="input-search">

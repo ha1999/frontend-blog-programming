@@ -39,9 +39,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        #g-signin2{
-            border-radius: 10px;
-            overflow: hidden;
+        .signIn-button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: rgb(6, 206, 233);
+            color: #ffff;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: rgb(5, 119, 134);
+            }
         }
     }
     .over-lay{
@@ -51,3 +59,26 @@
         height: 100vh;
     }
 }
+
+
+@media screen and (max-width: 450px) {
+    #header {
+        .logo {
+            width: 70px;
+            img {
+                width: 70px;
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    #header {
+        .logo {
+            width: 50px;
+            img {
+                width: 50px;
+            }
+        }
+    }
+  }

@@ -12,6 +12,7 @@ const DashBoard = React.lazy(() => import ('../pages/DashBoard'))
 const PageNotFound = React.lazy(() => import('../pages/notFound'))
 const PageSearch = React.lazy(()=> import('../pages/Search'))
 const Profile = React.lazy(()=> import ('../pages/Profile'))
+const Login = React.lazy(() => import("../pages/Login"))
 function AppRoute() {
   return (
     <Router>
@@ -24,6 +25,9 @@ function AppRoute() {
         </Route>
         <Route path="/dash-board">
           <DashBoard />
+        </Route>
+        <Route path='/login'>
+           <Login />
         </Route>
         <Route path="/t/:tag">
           <TagDetail />
