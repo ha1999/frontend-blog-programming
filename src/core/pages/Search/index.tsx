@@ -13,16 +13,17 @@ const PageSearch = () => {
     const query = useQuery()
     const dispatch = useDispatch()
     const updatePage = React.useCallback((pageNumber: number) => {
-        const search = query.get('search')
+        const search = query.get('search')?.trim()
         const sort = query.get('sort')
         if (search && sort)
             history.push(`/search?search=${search}&page=${pageNumber}&sort=${sort}`)
     }, [history, query])
+
     const count = useSelector(getCountBlog)
 
     React.useEffect(() => {
         const page = query.get('page')
-        const search = query.get('search')
+        const search = query.get('search')?.trim()
         const sort = query.get('sort')
         if (page && search && sort)
             dispatch({

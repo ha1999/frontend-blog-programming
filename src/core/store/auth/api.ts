@@ -6,6 +6,11 @@ export async function login(token: string): Promise<AuthResult>{
     return data
 }
 
+export async function loginGitHub(code: string): Promise<AuthResult>{
+    const {data} =  await httpApi.post('auth/github-login', {code})
+    return data
+}
+
 export async function logout(): Promise<void>{
     await httpApi.post('auth/logout')
 }
