@@ -25,6 +25,7 @@ function App(){
   }, [dispatch])
   
   useEffect(()=> {
+    console.log('process.env.REACT_APP_GITHUB_ID', process.env.REACT_APP_GITHUB_ID)
     AOS.init()
   },[])
 
