@@ -7,15 +7,15 @@ import { AuthResult, Profile } from './auth.interface'
 import {loginSaga, logoutSaga, updateProfile} from './authSlice'
 import {LoginAction, sagaActions, LoginGHAction} from './sagaActions'
 
-export function* userLogin(action: LoginAction){
+export function* userLoginGG(action: LoginAction){
     try {
         yield put(setLoading(true))
         const data: AuthResult = yield login(action.payload)
         yield put(loginSaga(data))
         ToastifyBase.success('Login successful!')
-        setTimeout(()=> {
-            window.location.href = window.location.origin + '/'
-        }, 1000)
+        // setTimeout(()=> {
+        //     window.location.href = window.location.origin + '/'
+        // }, 1000)
         yield put(setLoading(false))
     } catch (error) {
         yield put(setLoading(false))
@@ -31,9 +31,9 @@ export function* userLoginGH(action: LoginGHAction){
         console.log(data, 'data')
         yield put(loginSaga(data))
         ToastifyBase.success('Login successful!')
-        setTimeout(()=> {
-            window.location.href = window.location.origin + '/'
-        }, 1000)
+        // setTimeout(()=> {
+        //     window.location.href = window.location.origin + '/'
+        // }, 1000)
         yield put(setLoading(false))
     } catch (error) {
         yield put(setLoading(false))
@@ -73,7 +73,7 @@ export function* getProfileSaga() {
 }
 
 export const authSaga = [
-    takeLatest(sagaActions.LOG_IN, userLogin),
+    takeLatest(sagaActions.LOG_IN, userLoginGG),
     takeLatest(sagaActions.LOG_OUT, userLogout),
     takeLatest(sagaActions.CHECK_LOG_IN, userCheckLogin),
     takeLatest(sagaActions.PRO_FILE, getProfileSaga),
