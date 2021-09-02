@@ -12,11 +12,7 @@ export function* userLoginGG(action: LoginAction){
         yield put(setLoading(true))
         const data: AuthResult = yield login(action.payload)
         yield put(loginSaga(data))
-        ToastifyBase.success('Login successful!')
-        // setTimeout(()=> {
-        //     window.location.href = window.location.origin + '/'
-        // }, 1000)
-        yield put(setLoading(false))
+        window.location.href = window.location.origin + '/'
     } catch (error) {
         yield put(setLoading(false))
         handlerError(error)
@@ -28,13 +24,8 @@ export function* userLoginGH(action: LoginGHAction){
     try {
         yield put(setLoading(true))
         const data: AuthResult = yield call(loginGitHub, action.payload)
-        console.log(data, 'data')
         yield put(loginSaga(data))
-        ToastifyBase.success('Login successful!')
-        // setTimeout(()=> {
-        //     window.location.href = window.location.origin + '/'
-        // }, 1000)
-        yield put(setLoading(false))
+        window.location.href = window.location.origin + '/'
     } catch (error) {
         yield put(setLoading(false))
         handlerError(error)
