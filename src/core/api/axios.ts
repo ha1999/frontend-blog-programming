@@ -1,4 +1,5 @@
 import axios from 'axios'
+axios.defaults.withCredentials = true
 export const instanceAxios = axios.create({
     baseURL: process.env.NODE_ENV === 'production' ? 
     'https://blog-programming.herokuapp.com/api/' : 

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import './App.scss'
 import AppRoute from './core/router'
 import { ToastContainer} from 'react-toastify'
